@@ -7,7 +7,7 @@ import Lessons.*;
 
 public class Main {
     public static void main(String[] args) {
-        Main.homework1();
+        Main.homework1 ();
     }
 
     public static void lesson10() {

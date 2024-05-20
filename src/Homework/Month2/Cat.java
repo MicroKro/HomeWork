@@ -6,6 +6,10 @@ public class Cat extends Animal {
         super(name, age, weight, color);
     }
 
+        public String toString() {
+        return super.toString();
+    }
+    @Override
     public void say() {
         System.out.println("Мяу");
     }

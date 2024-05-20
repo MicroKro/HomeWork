@@ -1,50 +1,68 @@
 package Homework.Month2;
 
+import java.util.ArrayList;
+
 public class Animal {
 
-    String name;
-    int age;
-    int weight;
-    String color;
+   private String name;
+   private int age;
+   private int weight;
+   private String color;
 
-    public Animal(String name, int age, int weight, String color) {
+   public Animal(String name, int age, int weight, String color) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.color = color;
-    }
+   }
 
-    public String getName() {
+   public String getName() {
         return name;
-    }
+   }
 
-    public int getAge() {
+   public void setName(String name) {
+        this.name = name;
+   }
+
+   public int getAge() {
         return age;
-    }
+   }
 
-    public int getWeight() {
+   public void setAge(int age) {
+        this.age = age;
+   }
+
+   public int getWeight() {
         return weight;
-    }
+   }
 
-    public String getColor() {
+   public void setWeight(int weight) {
+        this.weight = weight;
+   }
+
+   public String getColor() {
         return color;
-    }
+   }
 
-    public void say() {
+   public void setColor(String color) {
+        this.color = color;
+   }
+
+   public void say() {
         System.out.println("Я говорю");
-    }
+   }
 
-    public void go() {
+   public void go() {
         System.out.println("Я иду");
-    }
-    public void drink () {
+   }
+   public void drink () {
         System.out.println("Я пью");
-    }
-    public void eat() {
+   }
+   public void eat() {
         System.out.println("Я ем");
-    }
+   }
 
-    public String getAgePlural() {
+   public String getAgePlural() {
         if (this.age == 1) {
             return "год";
         }
@@ -53,11 +71,15 @@ public class Animal {
         } else {
             return "лет";
         }
-    }
+   }
+   public interface Flying {
+        default void Fly() {
+            System.out.println("Я лечу");
+        }
+   }
 
-    @Override
-    public String toString() {
-        return "Привет! меня зовут " +
+   public String toString() {
+       return "Привет! меня зовут " +
                 this.name +
                 ", мне " +
                 this.age +
@@ -66,7 +88,7 @@ public class Animal {
                 this.weight +
                 "кг, мой цвет - " +
                 this.color;
-    }
+   }
 
 
 }

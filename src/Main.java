@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Main.lesson11();
+//        Main.lesson11();
+//        Main.practice1();
+        Main.homework1();
     }
 
     public static void lesson11() {

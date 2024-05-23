@@ -1,66 +1,80 @@
-import Homework.Month2.*;
-import Practice.*;
-import Lessons.*;
+import animal.Animal;
+import bird.Duck;
+import data.AnimalTypeData;
+import data.ColorData;
+import data.CommandsData;
+import pet.Cat;
+import pet.Dog;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        Main.lesson11();
-//        Main.practice1();
         Main.homework1();
     }
 
-    public static void lesson11() {
-        Lesson11.monthList();
-        Lesson11.checkCash();
-        Lesson11.namesList();
-        Lesson11.whileDo();
-        Lesson11.doWhile();
-    }
-
-    public static void practice1() {
-        Practice1.resurse();
-    }
-
     public static void homework1() {
-        List<String> animals = new ArrayList<>();
-        animals.add("Коты");
-        animals.add("Собаки");
-        animals.add("Утки");
-        System.out.println(animals);
+        List<Animal> animals = new ArrayList();
 
-        Animal animal = new Animal("Найда", 0, 3, "разноцветный");
-        System.out.println(animal);
-
-        Cat cat = new Cat("Мурка", 2, 4, "дымчатый");
-        System.out.println(cat);
+        Cat cat = new Cat("Мурка", 2, 4.1, ColorData.FOGGY);
+        animals.add(cat);
         cat.say();
 
-        Dog dog = new Dog("Бобик", 5, 10, "рыжий");
-        System.out.println(dog);
+        Dog dog = new Dog("Бобик", 5, 10, ColorData.ORANGE);
+        animals.add(dog);
         dog.say();
 
-
-        Duck duck = new Duck("Утито", 1, 5, "белый");
-        System.out.println(duck);
+        Duck duck = new Duck("Утито", 1, 5, ColorData.MULTICOLOR);
+        animals.add(duck);
         duck.Fly();
 
-//        Menu menu = new Menu();
-//        menu.addEntry(new MenuEntry("test1") {
-//            @Override
-//            public void run() {
-//                System.out.println("test1 run");
-//            }
-//        });
-//        menu.addEntry(new MenuEntry("test2") {
-//            @Override
-//            public void run() {
-//                System.out.println("test2 run");
-//            }
-//        });
-//        menu.run();
-    }
+        for (Animal i: animals) {
+            System.out.println(i);
+        }
 
+//        Scanner scanner = new Scanner(System.in);
+//
+//        CommandsData [] commandsData = CommandsData.values();
+//        String[] = commandsStr = new String[commandsData.length];
+//        for (int i=0; i< commandsData.length; i++) {
+//            commandsStr[i] = commandsData[i].name().toLowerCase();
+//        }
+//
+//        while (true){
+//        System.out.println("Введите одну из команд: %s\n" + String.join(commandsStr));
+//        String commandsStr = scanner.next(). trim().toUpperCase();
+//
+//        boolean isCommandExist = false;
+//        for (CommandsData command: commandsData) {
+//            if (command.name().equals(commandsStr)) {
+//                isCommandExist = true;
+//                break;
+//            }
+//        }
+//
+//        if (!isCommandExist) {
+//            System.out.println("Вы ввели неверную комманду. Попродуйте снова");
+//            continue;
+//        }
+//
+//        CommandsData userCommandData = CommandsData.valueOf(commandsStr);
+//
+//        switch (userCommandData) {
+//            case ADD:
+//                System.out.println("Вы ввели ADD");
+//                break;
+//            case LIST:
+//                System.out.println("Вы ввели LIST");
+//                break;
+//            case EXIT:
+//                System.out.println("Вы ввели EXIT");
+//                break;
+//
+//
+//
+//        }
+//
+    }
 }

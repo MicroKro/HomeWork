@@ -20,19 +20,19 @@ public class Main {
 
         Cat cat = new Cat("Мурка", 2, 4.1, ColorData.FOGGY);
         animals.add(cat);
+        System.out.println(cat);
         cat.say();
 
-        Dog dog = new Dog("Бобик", 5, 10, ColorData.ORANGE);
+        Dog dog = new Dog("Бобик", 5, 10.9, ColorData.ORANGE);
         animals.add(dog);
+        System.out.println(dog);
         dog.say();
 
-        Duck duck = new Duck("Утито", 1, 5, ColorData.MULTICOLOR);
+        Duck duck = new Duck("Утито", 1, 5.3, ColorData.MULTICOLOR);
         animals.add(duck);
+        System.out.println(duck);
         duck.Fly();
 
-        for (Animal i: animals) {
-            System.out.println(i);
-        }
 
 //        Scanner scanner = new Scanner(System.in);
 //

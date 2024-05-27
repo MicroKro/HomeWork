@@ -11,56 +11,56 @@ public class Animal {
    private ColorData color = null;
 
    public Animal(String name, int age, double weight, ColorData color) {
-        this.name = name;
-        this.age = age;
-        this.weight = weight;
-        this.color = color;
+       this.name = name;
+       this.age = age;
+       this.weight = weight;
+       this.color = color;
    }
 
    public String getName() {
-        return name;
+       return name;
    }
 
    public void setName(String name) {
-        this.name = name;
+       this.name = name;
    }
 
    public double getAge() {
-        return age;
+       return age;
    }
 
    public void setAge(int age) {
-        this.age = age;
+       this.age = age;
    }
 
    public double getWeight() {
-        return weight;
+       return weight;
    }
 
    public void setWeight(double weight) {
-        this.weight = weight;
+       this.weight = weight;
    }
 
    public ColorData getColor() {
-        return color;
+       return color;
    }
 
    public void setColor(ColorData color) {
-        this.color = color;
+       this.color = color;
    }
 
    public void say() {
-        System.out.println("Я говорю");
+       System.out.println("Я говорю");
    }
 
    public void go() {
-        System.out.println("Я иду");
+       System.out.println("Я иду");
    }
    public void drink () {
-        System.out.println("Я пью");
+       System.out.println("Я пью");
    }
    public void eat() {
-        System.out.println("Я ем");
+       System.out.println("Я ем");
    }
 
    private String getAgePlural() {

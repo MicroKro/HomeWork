@@ -1,11 +1,11 @@
 package data;
 
 public enum ColorData {
-    WHITE ("белый"),
-    BLACK("черный"),
-    ORANGE ("рыжий"),
-    MULTICOLOR ("разноцветный"),
-    FOGGY ("дымчатый");
+        WHITE ("белый"),
+        BLACK("черный"),
+        ORANGE ("рыжий"),
+        MULTICOLOR ("разноцветный"),
+        FOGGY ("дымчатый");
 
     private String colorName;
 

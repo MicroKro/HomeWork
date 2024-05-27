@@ -1,4 +1,7 @@
 package data;
 
-public class CommandsData {
+public enum CommandsData {
+    ADD,
+    LIST,
+    EXIT
 }

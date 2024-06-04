@@ -1,6 +1,4 @@
 package animal;
-
-import data.AnimalTypeData;
 import data.ColorData;
 
 public class Animal {
@@ -64,35 +62,24 @@ public class Animal {
    }
 
    private String getAgePlural() {
-       int ostatok = (int) (age %10);
+       if (age >= 10 && age <= 20) {
+           return "лет";
+       }
+
+       int ostatok = age %10;
 
        if (ostatok == 1) {
             return "год";
-        }
-       if (ostatok >= 2 && ostatok <=4) {
+       }
+       if (ostatok >= 2 && ostatok <= 4) {
             return "года";
-       }else {
+       } else {
             return "лет";
        }
    }
 
-//    @Override
-    //Вариант с конкатенацией
-//    public String toString() {
-//       return "Привет! меня зовут " +
-//                this.name +
-//                ", мне " +
-//                this.age +
-//                " " + this.getAgePlural() +
-//                ", я вешу - " +
-//                this.weight +
-//                "кг, мой цвет - " +
-//                this.color;
-//}
-   // Вариант с шаблоном
    public String toString() {
        return String.format("Привет! меня зовут %s, мне %d %s, я вешу - %.1f кг, мой цвет - %s",
                name, age, getAgePlural(), weight, color.getColorName().toLowerCase());
    }
-
 }

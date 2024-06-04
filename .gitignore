@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 out/*
 .gitignore
-.idea
+.idea/*
 *.iml
 
 Token.txt

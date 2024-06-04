@@ -7,7 +7,6 @@ import factory.AnimalFactory;
 import pet.Cat;
 import pet.Dog;
 import tools.InputHelper;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,8 +28,7 @@ public class Main {
         Duck duck = new Duck("Утито", 1, 5.3, ColorData.MULTICOLOR);
         animals.add(duck);
         System.out.println(duck);
-        duck.Fly();
-
+        duck.fly();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -92,13 +90,12 @@ public class Main {
 
                         if (isAnimalTypeExist) {
                             break;
-                        } else {
-                            System.out.println("Такого животного нет. Попробуйте снова");
-                            // continue
                         }
+
+                        System.out.println("Такого животного нет. Попробуйте снова");
                     }
 
-                    System.out.println(AnimalTypeData.valueOf(animalTypeInput).getAnimalType() + " имеет кличку? Введите ее");
+                    System.out.println(AnimalTypeData.valueOf(animalTypeInput).getAnimalType() + " отзывается на кличку? Введите ее");
                     String nameInput = scanner.next();
 
                     int ageInput;
@@ -108,7 +105,7 @@ public class Main {
                             ageInput = InputHelper.parseInt(scanner.next());
                             break;
                         } catch (Exception error) {
-                            System.out.println("Возраст может содержать только цифры :) Попробуйте еще раз" );
+                            System.out.println("Возраст может содержать только цифры и должен быть больше нуля :) Попробуйте еще раз" );
                         }
                     }
 
@@ -120,7 +117,7 @@ public class Main {
                             break;
                         } catch (Exception error) {
                             System.out.println(
-                                    "Вес нужно ввести цифрами (через точку, если число дробное). Попробуйте еще раз :)"
+                                    "Вес нужно ввести цифрами (через точку, если число дробное). Отрицательный возраст не принимается :) Попробуйте еще раз :)"
                             );
                         }
                     }
@@ -140,9 +137,10 @@ public class Main {
 
                         if (isColorDataExist) {
                             break;
-                        } else {
-                            System.out.println("Пожалуйста, выберите цвет из списка");
                         }
+
+                        System.out.println("Пожалуйста, выберите цвет из списка");
+
                     }
 
                     Animal userAnimal = animalFactory.create(

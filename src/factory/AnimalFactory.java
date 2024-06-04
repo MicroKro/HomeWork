@@ -1,14 +1,10 @@
 package factory;
-
 import animal.Animal;
 import bird.Duck;
-
 import data.AnimalTypeData;
 import data.ColorData;
 import pet.Cat;
 import pet.Dog;
-
-
 
 public class AnimalFactory {
     public Animal create (AnimalTypeData animalTypeData, String name, int age, double weight, ColorData color) {
@@ -21,6 +17,6 @@ public class AnimalFactory {
                 return new Duck(name, age, weight, color);
         }
 
-    return null;
+        return null;
     }
 }

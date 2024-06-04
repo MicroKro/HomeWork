@@ -1,21 +1,21 @@
 package data;
 
 public enum AnimalTypeData {
-        CAT("кот"),
-        DOG("собака"),
-        DUCK("утка");
+    CAT("кот"),
+    DOG("собака"),
+    DUCK("утка");
 
-   private String animalType;
+    private String animalType;
 
-   AnimalTypeData(String animalType) {
+    AnimalTypeData(String animalType) {
         this.animalType = animalType;
-   }
+    }
 
-   public String getAnimalType() {
+    public String getAnimalType() {
         return animalType;
-   }
+    }
 
-   public void setAnimalType(String animalType) {
+    public void setAnimalType(String animalType) {
         this.animalType = animalType;
-   }
+    }
 }

@@ -3,7 +3,7 @@ import animal.Animal;
 import data.ColorData;
 
 public class Cat extends Animal {
-    public Cat(String name, int age, double weight, ColorData color) {
+    public Cat(String name, double age, double weight, ColorData color) {
         super(name, age, weight, color);
     }
 

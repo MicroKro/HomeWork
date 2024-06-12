@@ -7,7 +7,7 @@ import pet.Cat;
 import pet.Dog;
 
 public class AnimalFactory {
-    public Animal create (AnimalTypeData animalTypeData, String name, int age, double weight, ColorData color) {
+    public Animal create (AnimalTypeData animalTypeData, String name, double age, double weight, ColorData color) {
         switch (animalTypeData) {
             case CAT:
                 return new Cat(name, age, weight, color);

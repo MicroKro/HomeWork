@@ -1,11 +1,9 @@
 import animal.Animal;
-import bird.Duck;
 import data.AnimalTypeData;
 import data.ColorData;
 import data.CommandsData;
 import factory.AnimalFactory;
 import pet.Cat;
-import pet.Dog;
 import tools.InputHelper;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,21 +12,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<Animal> animals = new ArrayList();
-
-        Cat cat = new Cat("Мурка", 2, 4.1, ColorData.FOGGY);
-        animals.add(cat);
-        System.out.println(cat);
-        cat.say();
-
-        Dog dog = new Dog("Бобик", 5, 10.9, ColorData.ORANGE);
-        animals.add(dog);
-        System.out.println(dog);
-        dog.say();
-
-        Duck duck = new Duck("Утито", 1, 5.3, ColorData.MULTICOLOR);
-        animals.add(duck);
-        System.out.println(duck);
-        duck.fly();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -77,7 +60,8 @@ public class Main {
                     String animalTypeInput = null;
 
                     while (true) {
-                        System.out.printf("Какое у Вас животное? Выберите из списка: %s\n", String.join("/", animalTypeStr));
+                        System.out.printf("Какое у Вас животное? Выберите из списка: %s\n", String.join
+                                ("/", animalTypeStr));
                         animalTypeInput = scanner.next().trim().toUpperCase();
 
                         boolean isAnimalTypeExist = false;
@@ -95,29 +79,37 @@ public class Main {
                         System.out.println("Такого животного нет. Попробуйте снова");
                     }
 
-                    System.out.println(AnimalTypeData.valueOf(animalTypeInput).getAnimalType() + " отзывается на кличку? Введите ее");
+                    System.out.println(AnimalTypeData.valueOf(animalTypeInput).getAnimalType() +
+                            " отзывается на кличку? Введите ее");
                     String nameInput = scanner.next();
 
-                    int ageInput;
+                    double ageInput;
                     while(true) {
-                        System.out.println("Сколько лет питомцу?" );
-                        try {
-                            ageInput = InputHelper.parseInt(scanner.next());
+                        System.out.println("Сколько лет питомцу? Округлите до полных лет или введите месяц через точку" +
+                                " (например 1.3)" );
+
+                        String inputValue = scanner.next().trim();
+                        if (InputHelper.isDoubleNumber(inputValue)) {
+                            ageInput = Double.parseDouble(inputValue);
                             break;
-                        } catch (Exception error) {
-                            System.out.println("Возраст может содержать только цифры и должен быть больше нуля :) Попробуйте еще раз" );
+                        } else {
+                            System.out.println("Возраст может содержать только цифры и должен быть больше нуля :)" +
+                                    " Попробуйте еще раз");
                         }
                     }
 
                     double weightInput;
                     while (true) {
-                        System.out.println("Сколько весит "+ AnimalTypeData.valueOf(animalTypeInput).getAnimalType() +"?");
-                        try {
-                            weightInput = InputHelper.parseDouble(scanner.next());
+                        System.out.println("Сколько весит "+ AnimalTypeData.valueOf(animalTypeInput).getAnimalType()
+                                +"?");
+
+                        String inputValue = scanner.next().trim();
+                        if (InputHelper.isDoubleNumber(inputValue)) {
+                            weightInput = Double.parseDouble(inputValue);
                             break;
-                        } catch (Exception error) {
-                            System.out.println(
-                                    "Вес нужно ввести цифрами (через точку, если число дробное). Отрицательный возраст не принимается :) Попробуйте еще раз :)"
+                        } else {
+                            System.out.println("Вес нужно ввести цифрами (через точку, если число дробное). " +
+                                    "Отрицательный возраст не принимается :) Попробуйте еще раз :)"
                             );
                         }
                     }

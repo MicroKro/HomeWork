@@ -1,14 +1,14 @@
 package animal;
 import data.ColorData;
 
-public class Animal {
+public abstract class Animal {
 
    private String name;
-   private int age;
+   private double age;
    private double weight;
    private ColorData color = null;
 
-   public Animal(String name, int age, double weight, ColorData color) {
+   public Animal(String name, double age, double weight, ColorData color) {
        this.name = name;
        this.age = age;
        this.weight = weight;
@@ -27,7 +27,7 @@ public class Animal {
        return age;
    }
 
-   public void setAge(int age) {
+   public void setAge(double age) {
        this.age = age;
    }
 
@@ -62,24 +62,57 @@ public class Animal {
    }
 
    private String getAgePlural() {
-       if (age >= 10 && age <= 20) {
-           return "лет";
+       int years = (int) age;
+       int month = 0;
+
+       String[] dateParts = String.valueOf(age).split("\\.");
+       if (dateParts.length > 1) {
+           month = Integer.parseInt(dateParts[1]);
        }
 
-       int ostatok = age %10;
+       String fullResult = "";
 
-       if (ostatok == 1) {
-            return "год";
+       if (years != 0) {
+           String yearsSuffix = "";
+           if (years >= 10 && years <= 20) {
+               yearsSuffix = "лет";
+           } else {
+               double ostatok = years % 10;
+               if (ostatok >= 0 && ostatok < 2) {
+                   yearsSuffix = "год";
+               } else  if (ostatok >= 2 && ostatok <= 4) {
+                   yearsSuffix = "года";
+               } else {
+                   yearsSuffix = "лет";
+               }
+           }
+
+           fullResult = String.format("%d %s", years, yearsSuffix);
        }
-       if (ostatok >= 2 && ostatok <= 4) {
-            return "года";
-       } else {
-            return "лет";
+
+       if (month != 0) {
+           String monthSuffix = "";
+           if (month >= 10 && month <= 20) {
+               monthSuffix = "месяцев";
+           } else {
+               double ostatok = month % 10;
+               if (ostatok >= 0 && ostatok < 2) {
+                   monthSuffix = "месяц";
+               } else if (ostatok >= 2 && ostatok <= 4) {
+                   monthSuffix = "месяца";
+               } else {
+                   monthSuffix = "месяцев";
+               }
+           }
+
+           fullResult = fullResult + String.format(" %d %s", month, monthSuffix);
        }
+
+       return fullResult;
    }
 
    public String toString() {
-       return String.format("Привет! меня зовут %s, мне %d %s, я вешу - %.1f кг, мой цвет - %s",
-               name, age, getAgePlural(), weight, color.getColorName().toLowerCase());
+       return String.format("Привет! меня зовут %s, мне %s, я вешу - %.1f кг, мой цвет - %s",
+               name, getAgePlural(), weight, color.getColorName().toLowerCase());
    }
 }

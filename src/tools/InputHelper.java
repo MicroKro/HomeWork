@@ -1,21 +1,13 @@
 package tools;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class InputHelper {
-    public static int parseInt(String input) throws Exception {
-        int parseVal = Integer.parseInt(input);
-        if (parseVal <= 0) {
-            throw new Exception("Invalid value");
-        }
 
-        return parseVal;
-    }
+    public static boolean isDoubleNumber (String inputValue) {
+        Pattern pattern = Pattern.compile("^(\\d*\\.?\\d*)$");
 
-    public static double parseDouble(String input) throws Exception {
-        double parseVal = Double.parseDouble(input);
-        if (parseVal <= 0) {
-            throw new Exception("Invalid value");
-        }
-
-        return parseVal;
+        Matcher matcher = pattern.matcher(inputValue);
+        return matcher.find();
     }
 }
